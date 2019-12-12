@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Maisiti</title>
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+            <div id="headerImg">
+                <div id="logo">
+                    
+                </div>
+                <div id="ampliar">
+                    <img src="./img/lupa.svg">
+                </div>
+            </div>
+            <div id="buscador">
+                <input type="text"/>
+            </div>
+        </header>
+        <nav id="nav">
+            <a href="#">Button1</a>
+            <a href="#">Button2</a>
+            <a href="#">Button3</a>
+            <a href="#">Button4</a>
+        </nav>
+        <div id="main">
+                <table id="calendar">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th>Lun</th><th>Mar</th><th>Mie</th><th>Jue</th><th>Vie</th><th>Sab</th><th>Dom</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+        </div>
+        <footer id="footer">
+            <ul>
+                <li><img src="./img/face.svg"/></li>
+                <li><img src="./img/twitter.png"/></li>
+                <li><img src="./img/tele.png"/></li>
+            </ul>
+            <p>Copyright Maisiti</p>
+        </footer>
+    </div>
+    <script>
+            var actual=new Date();
+            function pulsado(event){
+                if(event.target.style.backgroundColor != "rgb(151, 0, 255)"){
+                    let aux = document.getElementsByTagName("td");
+                    let celdas = Array.prototype.slice.call(aux);
+                    celdas.forEach((celda)=>{
+                        if(celda.style.backgroundColor == "rgb(151, 0, 255)"){
+                            celda.style.backgroundColor = "#FFFFFF";
+                        }
+                    });
+                    event.target.style.backgroundColor = "#9700ff";
+                }
+                else{
+                    event.target.style.backgroundColor = "#FFFFFF";
+                }
+            }
+            function mostrarCalendario(year,month)
+            {
+                var now=new Date(year,month-1,1);
+                var last=new Date(year,month,0);
+                var primerDiaSemana=(now.getDay()==0)?7:now.getDay();
+                var ultimoDiaMes=last.getDate();
+                var dia=0;
+                var resultado="<tr>";
+                var diaActual=0;
+                console.log(ultimoDiaMes);
+                var last_cell=primerDiaSemana+ultimoDiaMes;
+                for(var i=1;i<=42;i++)
+                {
+                    if(i==primerDiaSemana)
+                    {
+                        dia=1;
+                    }
+                    if(i<primerDiaSemana || i>=last_cell)
+                    {
+                        resultado+="<td>&nbsp;</td>";
+                    }else{
+                        if(dia==actual.getDate() && month==actual.getMonth()+1 && year==actual.getFullYear())
+                            resultado+="<td class='hoy'>"+dia+"</td>";
+                        else
+                            resultado+="<td onclick='pulsado(event)'>"+dia+"</td>";
+                        dia++;
+                    }
+                    if(i%7==0)
+                    {
+                        if(dia>ultimoDiaMes)
+                            break;
+                        resultado+="</tr><tr>\n";
+                    }
+                }
+
+                resultado+="</tr>";
+                var meses=Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+                nextMonth=month+1;
+                nextYear=year;
+                if(month+1>12)
+                {
+                    nextMonth=1;
+                    nextYear=year+1;
+                }
+                prevMonth=month-1;
+                prevYear=year;
+                if(month-1<1)
+                {
+                    prevMonth=12;
+                    prevYear=year-1;
+                }
+                document.getElementById("calendar").getElementsByTagName("caption")[0].innerHTML="<a class='flechaizquierda' onclick='mostrarCalendario("+prevYear+","+prevMonth+")'>&lt;</a><div class='fecha'>"+meses[month-1]+" / "+year+"</div><a class='flechaderecha' onclick='mostrarCalendario("+nextYear+","+nextMonth+")'>&gt;</a>";
+                document.getElementById("calendar").getElementsByTagName("tbody")[0].innerHTML=resultado;
+            }
+            mostrarCalendario(actual.getFullYear(),actual.getMonth()+1);
+            </script>
+</body>
+</html>
