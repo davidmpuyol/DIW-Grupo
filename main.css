@@ -61,8 +61,11 @@
     border-top: 1px black solid;
 }
 #main{
-    display:grid;
-    grid-template-columns:4fr 6fr;
+    grid-area: main;
+}
+#reg{
+    display:inline;
+    padding: 20px;
 }
 #footer p{
     align-self: center;
