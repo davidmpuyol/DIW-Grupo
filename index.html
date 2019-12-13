@@ -38,7 +38,30 @@
                         </thead>
                         <tbody>
                         </tbody>
-                    </table>
+                </table>
+                <section id="agenda">
+                    <ul>
+                        <li onclick="seleccionarAgenda(event)">08:00 - kajshdkasjd</li>
+                        <li onclick="seleccionarAgenda(event)">09:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">10:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">11:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">12:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">13:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">14:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">15:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">16:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">17:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">18:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">19:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">20:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">21:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">22:00 -</li>
+                        <li onclick="seleccionarAgenda(event)">23:00 -</li>
+                    </ul>
+                </section>
+                <section id="noticias"></section>
+                <section id="login"></section>
+                <section id="incidencias"></section>
         </div>
         <footer id="footer">
             <ul>
@@ -66,6 +89,18 @@
                     event.target.style.backgroundColor = "#FFFFFF";
                 }
             }
+
+            function seleccionarAgenda(event){
+                hora = event.target;
+                if(hora.style.backgroundColor != "rgb(0, 189, 255)"){
+                    hora.style.backgroundColor = "#00bdff"
+                }
+                else{
+                    hora.style.backgroundColor = "#FFFFFF";
+                }
+
+            }
+
             function mostrarCalendario(year,month)
             {
                 var now=new Date(year,month-1,1);
