@@ -10,12 +10,19 @@
                         "main main main main"
                         "footer footer footer footer";
 }
+#main.containerFlex{
+    display: flex;
+    flex-flow: column wrap;
+}
 #header{
     grid-area: header;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px black solid;
+    z-index: 3;
+    background-color:#B3E5FC;
+    
 }
 #headerImg,#buscador{
     display: flex;
@@ -49,10 +56,20 @@
     padding-top: 5vh;
     padding-bottom: 5vh;
     border-bottom: 1px black solid;
+    background-color: #03A9F4;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    -webkit-box-shadow: 0px 15px 79px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 15px 79px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 15px 79px 2px rgba(0,0,0,0.75);
 }
 #nav a{
     text-decoration: none;
-    color: black;
+    color: white;
+}
+#seleccionTipoIncidencia{
+    padding: 2vh 0;
 }
 #footer{
     grid-area: footer;
@@ -68,6 +85,7 @@
     grid-template-rows:4fr 3fr 3fr;
     column-gap:5px;
     row-gap:5px;
+    background-color: #B3E5FC;
     grid-area: main;
 }
 #reg{
@@ -86,6 +104,13 @@
 #footer ul li img{
     width: 4vw;
     height: 8vh;
+}
+
+#tablaIncidencias tr td{
+    border:0.1em black solid;
+}
+#tablaIncidencias tr td{
+    padding:3vh 13vw;
 }
 
 #calendar {
@@ -151,6 +176,20 @@
 }
 #noticias p{
     margin:5px;
+}
+.boton{
+    color: white;
+    border: 1px black solid;
+    background-color: #00BDFF;
+    border-radius: 0.1rem;
+    -webkit-box-shadow: 1.5px 1.5px 1.5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 1.5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1.5px 1.5px 1.5px 0px rgba(0,0,0,0.75);
+}
+.boton:hover{
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);   
 }
 #login{
     grid-row:2;
