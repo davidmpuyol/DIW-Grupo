@@ -1,9 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 #container{
     display: grid;
     grid-template-areas:"header header header header"
                         "nav nav nav nav"
                         "main main main main"
                         "footer footer footer footer";
+}
+#main.containerFlex{
+    display: flex;
+    flex-flow: column wrap;
 }
 #header{
     grid-area: header;
@@ -49,6 +58,9 @@
     text-decoration: none;
     color: black;
 }
+#seleccionTipoIncidencia{
+    padding: 2vh 0;
+}
 #main{
     grid-area: main;
 }
@@ -78,7 +90,12 @@
     height: 8vh;
 }
 
-
+#tablaIncidencias tr td{
+    border:0.1em black solid;
+}
+#tablaIncidencias tr td{
+    padding:3vh 13vw;
+}
 
 #calendar {
     grid-column:1;
