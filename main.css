@@ -1,13 +1,7 @@
 *{
-<<<<<<< HEAD
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-=======
     padding:0;
     margin:0;
     box-sizing:border-box;
->>>>>>> 358dd48773712aa036339778ed84f1fcd5985a13
 }
 #container{
     display: grid;
@@ -64,15 +58,12 @@
     text-decoration: none;
     color: black;
 }
-<<<<<<< HEAD
 #seleccionTipoIncidencia{
     padding: 2vh 0;
 }
 #main{
     grid-area: main;
 }
-=======
->>>>>>> 358dd48773712aa036339778ed84f1fcd5985a13
 #footer{
     grid-area: footer;
     display: flex;
@@ -107,7 +98,6 @@
     height: 8vh;
 }
 
-<<<<<<< HEAD
 #tablaIncidencias tr td{
     border:0.1em black solid;
 }
@@ -115,8 +105,6 @@
     padding:3vh 13vw;
 }
 
-=======
->>>>>>> 358dd48773712aa036339778ed84f1fcd5985a13
 #calendar {
     width:100%;
     height:100%;
@@ -162,6 +150,9 @@
     border:2px solid black;
     width:100%;
     height:100%;
+}
+.boton{
+    border: 1px #0F8BB6 solid;
 }
 #login{
     grid-row:2;
