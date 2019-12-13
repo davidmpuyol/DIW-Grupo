@@ -54,9 +54,6 @@
     text-decoration: none;
     color: black;
 }
-#main{
-    grid-area: main;
-}
 #footer{
     grid-area: footer;
     display: flex;
@@ -71,6 +68,11 @@
     grid-template-rows:4fr 3fr 3fr;
     column-gap:5px;
     row-gap:5px;
+    grid-area: main;
+}
+#reg{
+    display:inline;
+    padding: 20px;
 }
 #footer p{
     align-self: center;
