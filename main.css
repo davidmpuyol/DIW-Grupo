@@ -312,3 +312,37 @@
 #calendar .hoy {
     background-color:#00bdff;
 }
+
+@media screen and (max-width: 600px){
+
+#main{
+    display:grid;
+    grid-template-columns:100%;
+    grid-template-rows:none;
+    row-gap:5px;
+    background-color: #B3E5FC;
+    grid-area:main;
+}
+
+#calendar{
+    grid-row:1;
+    grid-column:1;
+    max-height:none;
+}
+#agenda{
+    grid-row:2;
+    grid-column:1;
+}
+#noticias{
+    grid-row:3;
+    grid-column:1;
+}
+#login{
+    grid-row:4;
+    grid-column:1;
+}
+#incidencias{
+    grid-row:5;
+    grid-column:1;
+}
+}
