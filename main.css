@@ -16,7 +16,7 @@
                         "nav nav nav nav"
                         "main main main main"
                         "footer footer footer footer";
-    background-image: url("./img/pueblo1.jpg");
+    background-image: url("./img/loja.JPG");
     background-size:cover;
 }
 #main.containerFlex{
@@ -32,6 +32,8 @@
     border-bottom: 1px black solid;
     z-index: 3;
     background-color:#B3E5FC;
+    background-image: url("./img/lojaBanner.jpg");
+    background-size: 50em;
     
 }
 #headerImg,#buscador{
@@ -45,9 +47,11 @@
     margin-bottom:10vh;
 }
 #logo{
-    width: 20vw;
-    height: 100%;
-    background-color: grey;
+    margin: auto;
+}
+#logo img{
+    width: 6em;
+    height: 6em;
 }
 #ampliar{
     align-self: center;
@@ -354,7 +358,18 @@
 }
 
 @media screen and (max-width: 600px){
-
+#nav{
+    flex-direction: column;
+    padding: 0;
+}
+#nav a{
+    padding-top:2vh;
+    padding-bottom:2vh;
+}
+#nav a:hover{
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+}
 #main{
     display:grid;
     grid-template-columns:100%;
