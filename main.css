@@ -120,11 +120,12 @@
     grid-area: main;
 }
 #reg{
+    box-sizing:auto;
     display:inline;
     padding: 20px;
     background-color: #B3E5FC;
-    width: 100%;
-    margin-left : 25%
+    grid-area: main;
+    margin: 0 auto;
 }
 #footer p{
     align-self: center;
@@ -399,5 +400,14 @@
 #incidencias{
     grid-row:5;
     grid-column:1;
+}
+#reg{
+    display:grid;
+    grid-template-columns: 100%;
+    width:100%;
+    padding: 20px;
+    background-color: #B3E5FC;
+    grid-area: main;
+    margin: 0 auto;
 }
 }
